@@ -11,7 +11,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - /mnt/ebs/postgres-data:/var/lib/postgresql/data
     networks:
       - app-network
     healthcheck:
@@ -54,6 +54,3 @@ services:
 networks:
   app-network:
     driver: bridge
-
-volumes:
-  postgres-data:
